@@ -1,7 +1,7 @@
 import HttpUtil from "../http/HttpUtil";
 
 export default {
-  // 获取微信openId
+  // 保存IP地址信息
   getIPAddress (params) {
     return HttpUtil.post_json('/1/classes/ceshi', params)
   },

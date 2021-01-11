@@ -49,19 +49,22 @@ export default {
       wxmp.getIPAddress(obj)
 
 
-      console.log(111)
-      this.getUserIP((ip) => {
-        this.ip = ip;
-      });
+      // console.log(111)
+      // this.getUserIP((ip) => {
+      //   this.ip = ip;
+      // });
 
     },
 
   }, mounted() {
-    // var worker = new Worker('http://pv.sohu.com/cityjson?ie=utf-8');
-    // console.log(worker)
-    console.log(this.$THREE.cip)
-    console.log(this.$THREE)
 
+    var obj = {
+      "ipAddress": this.$THREE.cip
+    }
+
+    wxmp.getIPAddress(obj)
+
+    console.log(this.$THREE.cip)
 
   }
 }
