@@ -6,8 +6,9 @@ export default {
     return HttpUtil.post_json('/1/classes/ceshi', params)
   },
 
-  creatVisitor(params){
-    return HttpUtil.get('/api1/visitor-service/user',params)
+  //保存经纬度
+  saveAddress(params){
+    return HttpUtil.post_json('/1/classes/address',params)
   },
 
 }
