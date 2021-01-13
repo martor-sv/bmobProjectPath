@@ -1,10 +1,16 @@
 <template>
   <div>
-    <XButton type="primary" @click.native="getIP">测试接口</XButton>
-    <div>{{ ip }}</div>
-    <span>
-          location: lng = {{ this.$data.lng }} lat = {{ this.$data.lat }}
-    </span>
+
+    <div class="box" align="center">
+      <p>小姐姐</p>
+      <p>我观察你很久了</p>
+      <h1>做我对象好不好?</h1>
+      <img src="../assets/flowers.jpg">
+      <div class="bottom">
+        <XButton type="primary" class="left" id="hao" @click.native="hao">好</XButton>
+        <XButton type="warn" class="right" id="buhao" @click.native="buhao">不好</XButton>
+      </div>
+    </div>
 
     <el-amap vid="amap" :plugin="plugin" class="amap-demo">
     </el-amap>
@@ -17,7 +23,7 @@
 import {XButton} from "vux";
 import wxmp from "../http/wxmp";
 import HttpUtil from "../http/HttpUtil";
-
+let Dianji = 0;
 export default {
 
   components: {
@@ -35,7 +41,6 @@ export default {
       lng: 12,
       lat: 12,
       loaded: false,
-
       plugin: [{
         pName: 'Geolocation',
         events: {
@@ -58,19 +63,32 @@ export default {
       }]
     }
   }, methods: {
-    getIP() {
-      // const params = new Map();
-      // params["name"] = "天生骄傲"
-      // params["ipAddress"] = this.$THREE.cip
+    hao(){
+      alert("小姐姐终于同意了，我爱你");
+    },
+    buhao(){
+      Dianji++;
+      if(Dianji==1){
+        alert("小姐姐在考虑一下呗");
+      }else if(Dianji==2){
+        alert("你是我见过的最帅气善良可爱的女孩");
 
+      }else if(Dianji==3){
+        alert("一生一世爱你");
 
-      // var obj = {
-      //   "ipAddress": this.$THREE.cip
-      // }
-      // console.log(obj)
-      // wxmp.getIPAddress(obj)
+      }else if(Dianji==4){
+        alert("家务我全干");
 
-    }, saveLC(lng, lat) {
+      }else if(Dianji==5){
+        alert("不藏私房钱");
+      }else if(Dianji==6){
+        alert("房子写你名");
+      }else if(Dianji==7){
+        alert("工资全上交");
+        Dianji=1;
+      }
+    },
+    saveLC(lng, lat) {
       console.log(lng + "   123    " + lat)
       var add = {
         "lng": lng.toString(),
