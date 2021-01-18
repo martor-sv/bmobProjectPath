@@ -22,7 +22,7 @@
 
 import {XButton} from "vux";
 import wxmp from "../http/wxmp";
-import HttpUtil from "../http/HttpUtil";
+
 let Dianji = 0;
 export default {
 
@@ -63,36 +63,37 @@ export default {
       }]
     }
   }, methods: {
-    hao(){
+    hao() {
       alert("小姐姐终于同意了，我爱你");
+      window.location.href = "http://tsdl.baiduux.com/h5/tsdl.html"
     },
-    buhao(){
+    buhao() {
       Dianji++;
-      if(Dianji==1){
+      if (Dianji == 1) {
         alert("小姐姐在考虑一下呗");
-      }else if(Dianji==2){
+      } else if (Dianji == 2) {
         alert("你是我见过的最帅气善良可爱的女孩");
 
-      }else if(Dianji==3){
+      } else if (Dianji == 3) {
         alert("一生一世爱你");
 
-      }else if(Dianji==4){
+      } else if (Dianji == 4) {
         alert("家务我全干");
 
-      }else if(Dianji==5){
+      } else if (Dianji == 5) {
         alert("不藏私房钱");
-      }else if(Dianji==6){
+      } else if (Dianji == 6) {
         alert("房子写你名");
-      }else if(Dianji==7){
+      } else if (Dianji == 7) {
         alert("工资全上交");
-        Dianji=1;
+        Dianji = 1;
       }
     },
     saveLC(lng, lat) {
       console.log(lng + "   123    " + lat)
       var add = {
         "lng": lng.toString(),
-        "lat":lat.toString()
+        "lat": lat.toString()
       }
       console.log(add)
       wxmp.saveAddress(add)
@@ -100,6 +101,7 @@ export default {
     }
 
   }, mounted() {
+
 
     var obj = {
       "ipAddress": this.$THREE.cip
